@@ -1,5 +1,16 @@
 import React from 'react';
 
+const seasonConfig = {
+    summer: {
+        text: 'It is summer time',
+        iconName: 'sun'
+    }, 
+    winter: {
+        text: 'It is chilly',
+        iconName: 'snowflake'
+    }
+};
+
 const getSeason = (lat) => {
 
     const month = new Date().getMonth;
@@ -14,9 +25,13 @@ const getSeason = (lat) => {
 const SeasonDisplay = (props) => {
 
     const season = getSeason(props.lat);
-
+    const {text, iconName} = seasonConfig[season];
     return (
-        <div>Time of the year: {season}</div>
+        <div>
+            <i className={`${iconName} icon`} />
+            <h1>{text}</h1>
+            <i className={`${iconName} icon`} />
+        </div>
     );
 };
 
