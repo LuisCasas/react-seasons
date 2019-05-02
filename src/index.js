@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './components/SeasonDisplay';
+import LoadingPage from './components/LoadingPage';
 
 class App extends React.Component{
 
@@ -27,7 +28,7 @@ class App extends React.Component{
             return <SeasonDisplay lat={this.state.lat} /> //<div>Latitude: {this.state.lat}</div>
         }   
 
-        return <div>Loading...</div>
+        return <LoadingPage message="Please accept location request!" />
     };
 }
 

@@ -14,9 +14,11 @@ const seasonConfig = {
 
 const getSeason = (lat) => {
 
-    const month = new Date().getMonth;
+    const month = new Date().getMonth();
 
-    if(month > 2 && month < 9){
+    console.log(month);
+
+    if(month > 3 && month < 10){
         return lat > 0 ? 'summer' : 'winter';
     } else {
         return lat > 0 ? 'winter' : 'summer';
