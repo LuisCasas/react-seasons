@@ -18,8 +18,7 @@ class App extends React.Component{
         }); 
     }
 
-    render(){
-
+    renderContent(){
         if(this.state.error && !this.state.lat){
             return <div>Error: {this.state.error}</div>
         }
@@ -29,6 +28,15 @@ class App extends React.Component{
         }   
 
         return <LoadingPage message="Please accept location request!" />
+    }
+
+    render(){
+        return(
+            <div className="mainFrame">
+                {this.renderContent()}
+            </div>
+        );
+        
     };
 }
 
